@@ -7,7 +7,7 @@ public class Prodotto {
 	private int codice;
 	private String nome;
 	private String descrizione;
-	private int prezzo;
+	private int prezzoBase;
 	private int iva;
 	
 	//costruttore
@@ -16,7 +16,7 @@ public class Prodotto {
 		setCodice();
 		setNome(nome);
 		setDescrizione(descrizione);
-		setPrezzo(prezzo);
+		setPrezzoBase(prezzo);
 		setIva(iva);
 	}
 	
@@ -51,13 +51,13 @@ public class Prodotto {
 			return descrizione;
 		}
 	
-	//setter e getter per il prezzo
-	public void setPrezzo(int prezzo) {
-		this.prezzo = prezzo;
+	//setter e getter per il prezzo base
+	public void setPrezzoBase(int prezzo) {
+		this.prezzoBase = prezzo;
 	}
 	
-	public int getPrezzo() {
-		return prezzo;
+	public int getPrezzoBase() {
+		return prezzoBase;
 	}
 	
 	//setter e getter per l'iva
@@ -65,7 +65,19 @@ public class Prodotto {
 		this.iva = iva;
 	}
 	
-	public int getIva() {
-		return iva;
+	public String getIva() {
+		return iva + "%";
+	}
+	
+	//metodo per avere il prezzo compreso di iva
+	public double getPrezzoFinale() {
+		double prezzoFinale = prezzoBase * ((100 + iva) / 100);
+		
+		return prezzoFinale;
+	}
+	
+	//metodo per aavere il nome esteso
+	public String getNomeEsteso() {
+		return codice + "-" + nome;
 	}
 }
