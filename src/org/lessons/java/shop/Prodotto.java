@@ -71,7 +71,7 @@ public class Prodotto {
 	
 	//metodo per avere il prezzo compreso di iva
 	public double getPrezzoFinale() {
-		double prezzoFinale = prezzoBase * ((100 + iva) / 100);
+		double prezzoFinale = prezzoBase + (prezzoBase * iva / 100);
 		
 		return prezzoFinale;
 	}
