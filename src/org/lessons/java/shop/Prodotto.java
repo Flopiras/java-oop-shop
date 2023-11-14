@@ -70,10 +70,10 @@ public class Prodotto {
 	}
 	
 	//metodo per avere il prezzo compreso di iva
-	public double getPrezzoFinale() {
+	public String getPrezzoFinale() {
 		double prezzoFinale = prezzoBase + (prezzoBase * iva / 100);
 		
-		return prezzoFinale;
+		return String.format("%.2f", prezzoFinale);
 	}
 	
 	//metodo per aavere il nome esteso
